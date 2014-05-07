@@ -40,3 +40,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 
 gem 'foundation-rails'
+gem 'protected_attributes'
+
+gem 'devise'
