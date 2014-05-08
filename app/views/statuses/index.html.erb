@@ -6,7 +6,7 @@
 
 <% @statuses.each do |status| %>
   <div class="status">
-    <strong><%= status.name %></strong>
+    <strong><%= status.user_id %></strong>
     <p><%= status.content %></p>
     <div class="meta">
       <%= link_to time_ago_in_words(status.created_at) + " ago", status %>
@@ -18,5 +18,5 @@
   </div>
 <% end %>
 
-
+<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 </div>
