@@ -43,3 +43,5 @@ gem 'foundation-rails'
 gem 'protected_attributes'
 
 gem 'devise'
+
+gem 'simple_form'

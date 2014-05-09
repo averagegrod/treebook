@@ -23,14 +23,20 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li class="active"><a href="#">Right Button Active</a></li>
-        <li class="has-dropdown">
-          <a href="#">Right Button Dropdown</a>
+
+        <% if user_signed_in? %>
+        <li class="has-dropdown active">
+          <%= link_to current_user.full_name, statuses_path %></a>
           <ul class="dropdown">
+            <li><%= link_to "Edit Profile", edit_user_registration_path  %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %>
             </li>
           </ul>
         </li>
+        <% else %>
+        <li><%= link_to "Register", new_user_registration_path %></li>
+        <li><%= link_to "Log In", user_session_path %></li>
+        <% end %>
       </ul>
 
       <!-- Left Nav Section -->
@@ -39,7 +45,7 @@
       </ul>
     </section>
   </nav>
-  
+
   <div class="row">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -47,9 +53,9 @@
 
   <%= yield %>
 
-  
 
-  
+
+
   <%= javascript_include_tag "application" %>
 </body>
 </html>

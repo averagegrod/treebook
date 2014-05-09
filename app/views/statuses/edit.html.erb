@@ -1,6 +1,16 @@
-<h1>Editing status</h1>
+<div class="row">
+	<div class="small-6 columns">
+		
+		<fieldset>
+			<legend>Editing status</legend>
 
-<%= render 'form' %>
+			<%= render 'form' %>
+		</fieldset>
+	</div>
 
-<%= link_to 'Show', @status %> |
-<%= link_to 'Back', statuses_path %>
+
+	<div class="columns">
+		<%= link_to 'Show', @status %> |
+		<%= link_to 'Back', statuses_path %>
+	</div>
+</div>
