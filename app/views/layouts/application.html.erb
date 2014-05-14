@@ -47,14 +47,15 @@
   </nav>
 
   <div class="row">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% flash.each do |type, message| %>
+      <div class="alert-box <%= flash_class type %>">
+        <%= message %>
+      </div>
+    <% end %>
+
   </div>
 
   <%= yield %>
-
-
-
 
   <%= javascript_include_tag "application" %>
 </body>
